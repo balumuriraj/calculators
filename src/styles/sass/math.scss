@@ -1,0 +1,54 @@
+.button-wrapper {
+  height: 100px;
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: lighter;
+  font-size: 1.4em;
+  background-color: #17141d;
+  flex: 1;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+  font-size: 4em;
+  height: 1em;
+  // background-color: #222;
+  color: #fff;
+  padding: 0.5em;
+}
+
+.math-app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #100e17;
+  color: #fff;
+
+  .wrapper {
+    margin: 5px;
+    margin-top: -3em;
+    width: 100%;
+    text-align: center;
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;    
+      box-shadow: -1rem 0 3rem #000; 
+
+      .row {
+        display: flex;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -42,13 +42,15 @@ const Home: React.FC = () => {
   });
 
   return (
-    <div className="app">
-      <header>
-        <p className="title">Calculators</p>
-        <div className="letter-changer"></div>
-      </header>
-      <div className="cards-container">
-        <ul>{cardsList}</ul>
+    <div className="home-app">
+      <div className="main-block">
+        <header>
+          <p className="title">Calculators</p>
+          <div className="letter-changer"></div>
+        </header>
+        <div className="cards-container">
+          <ul>{cardsList}</ul>
+        </div>
       </div>
     </div>
   );
