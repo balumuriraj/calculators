@@ -1,0 +1,92 @@
+.app {
+  margin: 5px;
+  margin-top: -6em;
+
+  header {
+    display: flex;
+    color: #fff;
+
+    .title {
+      margin: 0;
+      padding-left: 0.1em;
+      font-size: 5em;
+      font-weight: bold;
+      opacity: 0.85;
+      text-transform: lowercase;
+    }
+
+    @keyframes changeLetter {
+      0% {
+        content: "\002B";
+      }
+      15% {
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+        content: "\2212";
+      }
+      45% {
+        opacity: 0;
+      }
+      60% {
+        opacity: 1;
+        content: "\00F7";
+      }
+      75% {
+        opacity: 0;
+      }
+      90% {
+        content: "\00D7";
+      }
+      100% {
+        content: "\00D7";
+      }
+    }
+
+    .letter-changer::after {
+      animation: changeLetter 5s linear infinite alternate;
+      content: "";
+      font-size: 3em;
+    }
+  }
+
+  .cards-container {
+    max-width: 1000px;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+
+      a {
+        text-decoration: none;
+        margin: 5px;
+        flex-grow: 1;
+        flex-basis: 1;
+        text-transform: uppercase;
+        cursor: pointer;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.75);
+        box-shadow: 0px 0px 51px 0px rgba(0, 0, 0, 0.08), 0px 6px 18px 0px rgba(0, 0, 0, 0.05);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateY(0px);
+        font-size: 1.25em;
+        font-weight: bold;
+        color: rgba(85, 85, 85, 0.75);
+        border-radius: 5px;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.95);
+        }
+      }
+    }
+  }
+}

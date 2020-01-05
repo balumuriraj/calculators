@@ -1,0 +1,59 @@
+@import "font";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  height: 100%;
+
+  color: #555;
+
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  #root {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient( 135deg, #EE9AE5 10%, #5961F9 100%);
+
+    &::before {
+      content: "";
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      // https://webkul.github.io/coolhue/      
+      // background-image: linear-gradient( 135deg, #E2B0FF 10%, #9F44D3 100%);
+      // background-image: linear-gradient( 135deg, #3C8CE7 10%, #00EAFF 100%);
+
+      animation-name: changeBackground;
+      animation-duration: 10s;
+      // animation: changeBackground 5s linear infinite alternate;
+      animation-iteration-count: infinite;
+      transition: background-image 2s ease-in-out;
+    }
+
+    @keyframes changeBackground {
+      0% {
+        background-image: linear-gradient(135deg, #FFF6B7 10%, #F6416C 100%);
+      }
+      25% {
+        opacity: 0;
+      }
+      50% {
+        background-image: linear-gradient(135deg, #3c8ce7 10%, #00eaff 100%);
+      }
+      75% {
+        opacity: 0;
+      }
+      100% {
+        background-image: linear-gradient(135deg, #FFF6B7 10%, #F6416C 100%);
+      }
+    }
+  }
+}
