@@ -5,25 +5,42 @@
   justify-content: center;
   align-items: center;
   font-weight: lighter;
-  font-size: 1.4em;
-  background-color: #17141d;
+  font-size: 2em;
   flex: 1;
+  cursor: pointer;
 
   &:hover {
-    opacity: 0.5;
+    background-color: #3d4957;
   }
+}
+
+.operator {
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .input-wrapper {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  font-weight: bold;
-  font-size: 4em;
-  height: 1em;
-  // background-color: #222;
+  flex-direction: column;
+  text-align: right;
+  border-radius: 10px;
+  background-color: #3d4957;
   color: #fff;
-  padding: 0.5em;
+  padding: 2em;
+  overflow: hidden;
+
+  .input {
+    height: 1em;
+    opacity: 0.5;
+    text-overflow: ellipsis;
+    padding-bottom: 0.5em;
+  }
+
+  .result {
+    font-weight: bold;
+    font-size: 3em;
+    height: 1em;
+    text-overflow: ellipsis;
+  }
 }
 
 .math-app {
@@ -31,23 +48,93 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #100e17;
+  background-image: linear-gradient(135deg, #f6d242 10%, #ff52e5 100%);
   color: #fff;
 
   .wrapper {
     margin: 5px;
+    padding: 0 5%;
     margin-top: -3em;
     width: 100%;
-    text-align: center;
+    max-width: 450px;
+
+    header {
+      .back {
+        a {
+          text-decoration: none;
+          color: #fff;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+
+          svg {
+            font-size: 1.5em;
+            padding-right: 5px;
+          }
+        }
+      }
+
+      .title {
+        font-size: 3em;
+        font-weight: bold;
+        padding: 5px 0;
+      }
+    }
 
     .container {
-      max-width: 1000px;
-      margin: 0 auto;    
-      box-shadow: -1rem 0 3rem #000; 
+      background-color: #384351;
+      border-radius: 10px;
+      margin: 0 auto;
+      box-shadow: 0px 0px 51px 0px rgba(0, 0, 0, 0.08), 0px 6px 18px 0px rgba(0, 0, 0, 0.05);
 
-      .row {
-        display: flex;
-        width: 100%;
+      .rows-block {
+        box-shadow: 0 -1em 1em -5px #303946;
+        .row {
+          display: flex;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  .button-wrapper {
+    max-height: 75px;
+    min-width: 50px;
+    font-size: 1.75em;
+  }
+
+  .input-wrapper {
+    padding: 1em;
+  
+    .input {
+      height: 1em;
+      opacity: 0.5;
+      text-overflow: ellipsis;
+      padding-bottom: 0.5em;
+    }
+  
+    .result {
+      font-weight: bold;
+      font-size: 3em;
+      height: 1em;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .math-app {
+    // height: auto;
+    align-items: flex-start;
+
+    .wrapper {
+      margin-top: 1em;
+      margin-bottom: 2em;
+
+      header {
+        .title {
+          font-size: 2em;
+        }   
       }
     }
   }

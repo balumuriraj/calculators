@@ -6,12 +6,14 @@ import React from 'react';
 
 type IProps = {
   input: string;
+  result: string;
 }
 
-const Input: React.FC<IProps> = ({input}) => {
+const Input: React.FC<IProps> = ({input, result}) => {
   return (
     <div className="input-wrapper">
-      {input}
+      <div className="input">{input}</div>
+      <div className="result">{result}</div>
     </div>
   );
 }

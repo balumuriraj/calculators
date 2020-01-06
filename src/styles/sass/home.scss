@@ -42,6 +42,7 @@
   .main-block {
     margin: 5px;
     margin-top: -6em;
+    padding: 0 5%;
 
     header {
       display: flex;
@@ -126,6 +127,54 @@
 
           &:hover {
             background: rgba(255, 255, 255, 0.95);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .home-app {
+    align-items: flex-start;
+
+    .main-block {
+      margin-top: 1em;
+      margin-bottom: 2em;
+
+      header {
+        .title {
+          font-size: 3em;
+        }  
+        .letter-changer::after {
+          font-size: 2em;
+        }      
+      }
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  .home-app {
+    // height: auto;
+    align-items: flex-start;
+
+    .main-block {
+      margin-top: 1em;
+
+      header {
+        .title {
+          font-size: 2.5em;
+        }  
+        .letter-changer::after {
+          font-size: 1.75em;
+        }      
+      }
+
+      .cards-container {
+        ul {
+          a {
+            height: 100px;
           }
         }
       }
