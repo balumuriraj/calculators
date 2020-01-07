@@ -3,6 +3,15 @@ import ReactDOM from 'react-dom';
 import './styles/sass/index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+// Firebase App (the core Firebase SDK) is always required and must be listed first
+import * as firebase from "firebase/app";
+
+// If you enabled Analytics in your project, add the Firebase SDK for Analytics
+import "firebase/analytics";
+import firebaseConfig from './config.json';
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
