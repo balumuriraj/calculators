@@ -1,0 +1,164 @@
+@import "./DateInput.scss";
+@import "./DateBlock.scss";
+
+.date-app {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  background-image: linear-gradient(135deg, #ee9ae5 10%, #5961f9 100%);
+
+  &::before {
+    content: "";
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    // https://webkul.github.io/coolhue/
+    // background-image: linear-gradient( 135deg, #E2B0FF 10%, #9F44D3 100%);
+    // background-image: linear-gradient( 135deg, #3C8CE7 10%, #00EAFF 100%);
+
+    animation-name: changeBackground;
+    animation-duration: 10s;
+    // animation: changeBackground 5s linear infinite alternate;
+    animation-iteration-count: infinite;
+    transition: background-image 2s ease-in-out;
+  }
+
+  @keyframes changeBackground {
+    0% {
+      background-image: linear-gradient(135deg, #fff6b7 10%, #f6416c 100%);
+    }
+    25% {
+      opacity: 0;
+    }
+    50% {
+      background-image: linear-gradient(135deg, #3c8ce7 10%, #00eaff 100%);
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      background-image: linear-gradient(135deg, #fff6b7 10%, #f6416c 100%);
+    }
+  }
+
+  .wrapper {
+    margin: 5px;
+    padding: 0 5%;
+    margin-top: 5%;
+    margin-bottom: 2em;
+    width: 100%;
+    max-width: 750px;
+
+    header {
+      .back {
+        a {
+          text-decoration: none;
+          color: #fff;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+
+          svg {
+            font-size: 1.5em;
+            padding-right: 5px;
+          }
+        }
+      }
+
+      .title {
+        font-size: 3em;
+        font-weight: bold;
+        margin: 0;
+      }
+    }
+
+    .menu-container {
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      // margin-bottom: 1em;
+
+      .btn {
+        display: inline-block;
+        padding: 5px 10px;
+        background: rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+      }
+
+      .selected {
+        background: rgba(255, 255, 255, 0.15);
+      }
+    }
+    .container {
+      margin: 0 auto;
+      // margin-top: 2em;
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 2em;
+      border-radius: 5px 0 5px;
+
+      .block {
+        display: none;
+      }
+
+      .visible {
+        display: block;
+      }
+    }
+
+    .result-block {
+      margin: 0 auto;
+      margin-top: 2em;
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 2em;
+      border-radius: 5px;
+
+      .inputs {
+        margin: 0.5em 0;
+        display: flex;
+        justify-content: space-between;
+
+        input {
+          flex: 1;
+          max-width: 28%;
+          text-align: center;
+          padding: 0.25em;
+          font-weight: bold;
+          font-size: 2em;
+          background: rgba(0, 0, 0, 0.25);
+          border: 0;
+          // border-radius: 5px;
+          color: #fff;
+
+          /* Chrome, Safari, Edge, Opera */
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+
+          /* Firefox */
+          &[type="number"] {
+            -moz-appearance: textfield;
+          }
+
+          &::-webkit-input-placeholder {
+            /* Edge */
+            color: rgba(0, 0, 0, 0.15);
+          }
+
+          &:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: rgba(0, 0, 0, 0.15);
+          }
+
+          &::placeholder {
+            text-transform: uppercase;
+            color: rgba(0, 0, 0, 0.15);
+          }
+        }
+      }
+    }
+  }
+}
